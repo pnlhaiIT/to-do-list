@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, pink, rgb(214, 60, 60), orange, purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    width: 70%;
+    max-width: 500px;
+    background: white;
+    border-radius: 15px;
+}
+
+h1 {
+    font-weight: bolder;
+    color: rgb(158, 52, 33);
+}

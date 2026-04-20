@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PnlhaiCSE-TO DO LIST</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="board">
+        <h1 class="text-center">TO DO LIST</h1>
+        <p class="text-center fst-italic">Made by <span class="text-info">CSE Phạm Nguyễn Long Hải</span> with 💗</p>
+        <main>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Danh sách công việc</th>
+                            <th scope="col">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-9 cv">CV1</td>
+                            <td class="col-3 status">
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" />
+                                    Done
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" id="inputCV" class="form-control" placeholder="Nhập công việc...">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <button type="button" class="btn btn-primary my-1" id="them">Thêm công việc</button>
+                                <button type="button" class="btn btn-danger" id="xoa">Xóa công việc</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
