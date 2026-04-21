@@ -10,7 +10,7 @@ Một ứng dụng to-do list đơn giản để quản lý công việc hàng n
 - ✓ Đánh dấu công việc đã hoàn thành
 - 💾 Lưu dữ liệu trên localStorage (không cần server)
 
-## link demo
+## Link demo
 
 ```text
 https://pnlhaiit.github.io/to-do-list/
