@@ -14,7 +14,44 @@
 <body>
     <div id="board">
         <h1 class="text-center">TO DO LIST</h1>
-        <p class="text-center fst-italic">Made by <span class="text-info">CSE Phạm Nguyễn Long Hải</span> with 💗</p>
+        <p class="text-center fst-italic">Made by <span>CSE Phạm Nguyễn Long Hải</span> with 💗</p>
+        <div class="text-center">
+            <!-- Modal trigger button -->
+            <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalId">
+                Hướng dẫn sử dụng
+            </button>
+        </div>
+
+        <!-- Modal Body -->
+        <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+        <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">
+                            HƯỚNG DẪN SỬ DỤNG
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li> Nhập tên công việc vào ô và bấm nút <b>"Thêm công việc"</b> để thêm task.</li>
+                            <li> Nhập tên công việc muốn xóa vào ô và bấm nút <b>"Xóa công việc"</b> để xóa task.</li>
+                            <li>Bấm nút <b>"Clear All"</b> để xóa toàn bộ danh sách. </li>
+                        </ol>
+                        <span> Chúc ae trải nghiệm app vui vẻ 🫰</span>
+                        <h6><i>CSE Phạm Nguyễn Long Hải</i></h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <main>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -25,16 +62,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="col-9 cv">CV1</td>
-                            <td class="col-3 status">
-                                <label class="form-check">
-                                    <input class="form-check-input" type="checkbox" />
-                                    Done
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
+                        <tr class="input-row">
                             <td colspan="2">
                                 <input type="text" id="inputCV" class="form-control" placeholder="Nhập công việc...">
                             </td>
@@ -44,7 +72,8 @@
                         <tr>
                             <td colspan="2" class="text-center">
                                 <button type="button" class="btn btn-primary my-1" id="them">Thêm công việc</button>
-                                <button type="button" class="btn btn-danger" id="xoa">Xóa công việc</button>
+                                <button type="button" class="btn btn-danger my-1" id="xoa">Xóa công việc</button>
+                                <button type="button" class="btn btn-secondary" id="clear">Clear All</button>
                             </td>
                         </tr>
                     </tfoot>

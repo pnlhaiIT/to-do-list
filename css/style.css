@@ -17,3 +17,8 @@ h1 {
     font-weight: bolder;
     color: rgb(158, 52, 33);
 }
+
+span {
+    color: rgb(225, 113, 132);
+    font-weight: bolder;
+}

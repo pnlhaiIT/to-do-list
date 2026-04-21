@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    const todoList = JSON.parse(localStorage.getItem("todos")) || [];
+    let todoList = JSON.parse(localStorage.getItem("todos")) || [];
 
     function autoLoad() {
         if (todoList.length > 0) {
             for (let i = 0; i < todoList.length; i++) {
                 const checkedAttr = todoList[i].done ? "checked" : "";
-                $("tbody tr:first").before(`
+                $("tbody tr:last").before(`
                     <tr id="${todoList[i].id}">
                     <td class="col-9 cv">${todoList[i].name}</td>
                     <td class="col-3 status">
@@ -28,7 +28,7 @@ $(document).ready(function () {
         }
         for (let i = 0; i < todoList.length; i++) {
             if (addCV === todoList[i].name) {
-                alert(`Đã có task ${addCV} rồi!`);
+                alert(`Đã có task "${addCV}" rồi!`);
                 return;
             }
         }
@@ -67,6 +67,7 @@ $(document).ready(function () {
         let removeCV = $("#inputCV").val().trim();
         if (removeCV === "" || !removeCV) {
             alert("Chưa nhập tên task xóa kiểu chóa gì!!");
+            $("#inputCV").focus();
             return;
         }
         const idx = todoList.findIndex(t => t.name === removeCV);
@@ -76,14 +77,27 @@ $(document).ready(function () {
         }
         const IDxoa = todoList[idx].id;
         todoList.splice(idx, 1) //xóa 1 phần tử từ index idx
-        localStorage.setItem(JSON.stringify(todoList));
+        localStorage.setItem("todos", JSON.stringify(todoList));
         $(`#${IDxoa}`).remove();
         $("#inputCV").val("");
         return;
+    }
+
+    function clear() {
+        let sure = confirm("Bạn chắc chắn xóa hết?");
+        if (!sure) {
+            return;
+        } else {
+            todoList = [];
+            localStorage.setItem("todos", JSON.stringify(todoList));
+            $("tbody tr").not(".input-row").remove();
+            return;
+        }
     }
 
     autoLoad();
     $("#xoa").on("click", xoaCV);
     $("#them").click(themCV);
     checkDone();
+    $("#clear").click(clear);
 }); 
