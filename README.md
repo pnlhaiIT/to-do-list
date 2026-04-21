@@ -15,3 +15,7 @@ Một ứng dụng to-do list đơn giản để quản lý công việc hàng n
 ```text
 https://pnlhaicse.github.io/to-do-list/
 ```
+or
+```text
+project-afmq2.vercel.app
+```
