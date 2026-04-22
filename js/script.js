@@ -73,6 +73,8 @@ $(document).ready(function () {
         const idx = todoList.findIndex(t => t.name === removeCV);
         if (idx === -1) {
             alert("Không tìm thấy công việc để xóa!");
+            $("#inputCV").val("");
+            $("#inputCV").focus();
             return;
         }
         const IDxoa = todoList[idx].id;
