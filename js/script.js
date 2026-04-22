@@ -95,9 +95,23 @@ $(document).ready(function () {
         }
     }
 
+    function refreshStatus() {
+        let sure = confirm("Bạn muốn refresh toàn bộ trạng thái??");
+        if (!sure) {
+            return;
+        }
+        $(".form-check-input").prop("checked", false);
+        todoList.forEach(element => {
+            element.done = false;
+        });
+        localStorage.setItem("todos", JSON.stringify(todoList));
+        return;
+    }
+
     autoLoad();
     $("#xoa").on("click", xoaCV);
     $("#them").click(themCV);
     checkDone();
     $("#clear").click(clear);
-}); 
+    $("#refresh").on("click", refreshStatus);
+});
